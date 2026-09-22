@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#0066b3">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="USF Mobile">
+
+    <title>USF Mobile</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Ícone para iPhone/iPad -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+
+<body>
+
+    <!-- =========================================
+         APP
+    ========================================== -->
+    <div id="app">
+
+        <!-- =====================================
+             LOGIN
+        ====================================== -->
+        <section id="login-screen" class="screen active">
+
+            <div class="login-container">
+
+                <div class="login-logo">
+                    <div class="logo-circle">
+                        USF
+                    </div>
+                </div>
+
+                <h1>USF Mobile</h1>
+
+                <p class="login-subtitle">
+                    Portal do Aluno
+                </p>
+
+                <form id="login-form">
+
+                    <div class="input-group">
+
+                        <label for="username">
+                            Usuário
+                        </label>
+
+                        <input type="text"
+                               id="username"
+                               autocomplete="username"
+                               placeholder="Digite seu usuário">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Senha
+                        </label>
+
+                        <div class="password-container">
+
+                            <input type="password"
+                                   id="password"
+                                   autocomplete="current-password"
+                                   placeholder="Digite sua senha">
+
+                            <button type="button"
+                                    id="toggle-password"
+                                    class="password-toggle"
+                                    aria-label="Mostrar senha">
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <button type="submit"
+                            class="primary-button login-button">
+                        Entrar
+                    </button>
+
+                    <p id="login-error"
+                       class="login-error"></p>
+
+                </form>
+
+                <p class="login-footer">
+                    USF - Universidade São Francisco
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             HOME
+        ====================================== -->
+        <section id="home-screen" class="screen">
+
+            <!-- Header -->
+            <header class="app-header">
+
+                <div>
+
+                    <span class="header-small">
+                        Olá,
+                    </span>
+
+                    <strong id="header-student-name">
+                        Franciele Dos Santos Natal
+                    </strong>
+
+                </div>
+
+                <button id="header-profile-button"
+                        class="header-profile"
+                        aria-label="Perfil">
+                    FN
+                </button>
+
+            </header>
+
+
+            <!-- Conteúdo -->
+            <main class="page-content">
+
+                <!-- Saudação -->
+                <div class="welcome-card">
+
+                    <div>
+
+                        <span>
+                            Bem-vindo de volta! 👋
+                        </span>
+
+                        <h2 id="welcome-name">
+                            Franciele Dos Santos Natal
+                        </h2>
+
+                        <p id="welcome-course">
+                            Ciências Contábeis
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-decoration">
+                        🎓
+                    </div>
+
+                </div>
+
+
+                <!-- Próximo compromisso -->
+                <div class="section-title">
+
+                    <h3>
+                        Próximo compromisso
+                    </h3>
+
+                    <button class="text-button"
+                            data-screen="schedule">
+                        Ver todos
+                    </button>
+
+                </div>
+
+                <div class="event-card">
+
+                    <div class="event-date">
+
+                        <strong>
+                            12
+                        </strong>
+
+                        <span>
+                            OUT
+                        </span>
+
+                    </div>
+
+                    <div class="event-info">
+
+                        <strong>
+                            Contabilidade de Custos
+                        </strong>
+
+                        <span>
+                            19:00 - 21:40
+                        </span>
+
+                        <span>
+                            Sala 18
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Acesso rápido -->
+                <div class="section-title">
+
+                    <h3>
+                        Acesso rápido
+                    </h3>
+
+                </div>
+
+                <div class="quick-grid">
+
+                    <button class="quick-card"
+                            data-screen="grades">
+
+                        <span class="quick-icon">
+                            📝
+                        </span>
+
+                        <span>
+                            Notas
+                        </span>
+
+                    </button>
+
+
+                    <button class="quick-card"
+                            data-screen="schedule">
+
+                        <span class="quick-icon">
+                            📅
+                        </span>
+
+                        <span>
+                            Horários
+                        </span>
+
+                    </button>
+
+
+                    <button class="quick-card"
+                            data-screen="student-card">
+
+                        <span class="quick-icon">
+                            🎓
+                        </span>
+
+                        <span>
+                            Carteirinha
+                        </span>
+
+                    </button>
+
+
+                    <button class="quick-card"
+                            data-screen="documents">
+
+                        <span class="quick-icon">
+                            📄
+                        </span>
+
+                        <span>
+                            Documentos
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Avisos -->
+                <div class="section-title">
+
+                    <h3>
+                        Avisos
+                    </h3>
+
+                </div>
+
+                <div class="notice-card">
+
+                    <div class="notice-icon">
+                        📢
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Semana de provas
+                        </strong>
+
+                        <p>
+                            Consulte seu calendário acadêmico
+                            para conferir as próximas avaliações.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notice-card">
+
+                    <div class="notice-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Biblioteca
+                        </strong>
+
+                        <p>
+                            Novos materiais estão disponíveis
+                            para consulta.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </section>
+
+
+        <!-- =====================================
+             NOTAS
+        ====================================== -->
+        <section id="grades-screen" class="screen">
+
+            <header class="inner-header">
+
+                <button class="back-button"
+                        data-screen="home">
+                    ‹
+                </button>
+
+                <h2>
+                    Minhas Notas
+                </h2>
+
+                <div class="header-spacer"></div>
+
+            </header>
+
+            <main class="page-content">
+
+                <div class="semester-selector">
+
+                    <span>
+                        Período
+                    </span>
+
+                    <strong>
+                        2026/2
+                    </strong>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-header">
+
+                        <strong>
+                            Contabilidade Geral
+                        </strong>
+
+                        <span class="grade approved">
+                            9,2
+                        </span>
+
+                    </div>
+
+                    <div class="grade-details">
+
+                        <span>
+                            N1: 9,0
+                        </span>
+
+                        <span>
+                            N2: 9,4
+                        </span>
+
+                        <span>
+                            Média: 9,2
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-header">
+
+                        <strong>
+                            Matemática Financeira
+                        </strong>
+
+                        <span class="grade approved">
+                            8,7
+                        </span>
+
+                    </div>
+
+                    <div class="grade-details">
+
+                        <span>
+                            N1: 8,5
+                        </span>
+
+                        <span>
+                            N2: 8,9
+                        </span>
+
+                        <span>
+                            Média: 8,7
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-header">
+
+                        <strong>
+                            Direito Empresarial
+                        </strong>
+
+                        <span class="grade approved">
+                            9,0
+                        </span>
+
+                    </div>
+
+                    <div class="grade-details">
+
+                        <span>
+                            N1: 9,2
+                        </span>
+
+                        <span>
+                            N2: 8,8
+                        </span>
+
+                        <span>
+                            Média: 9,0
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-header">
+
+                        <strong>
+                            Análise das Demonstrações Contábeis
+                        </strong>
+
+                        <span class="grade approved">
+                            8,8
+                        </span>
+
+                    </div>
+
+                    <div class="grade-details">
+
+                        <span>
+                            N1: 8,6
+                        </span>
+
+                        <span>
+                            N2: 9,0
+                        </span>
+
+                        <span>
+                            Média: 8,8
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </section>
+
+
+        <!-- =====================================
+             HORÁRIOS
+        ====================================== -->
+        <section id="schedule-screen" class="screen">
+
+            <header class="inner-header">
+
+                <button class="back-button"
+                        data-screen="home">
+                    ‹
+                </button>
+
+                <h2>
+                    Horários
+                </h2>
+
+                <div class="header-spacer"></div>
+
+            </header>
+
+            <main class="page-content">
+
+                <div class="day-card">
+
+                    <div class="day-header">
+
+                        <strong>
+                            Segunda-feira
+                        </strong>
+
+                        <span>
+                            12 OUT(FERIADO)
+                        </span>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            19:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Contabilidade Geral
+                            </strong>
+
+                            <span>
+                                Sala 204
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            21:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Direito Empresarial
+                            </strong>
+
+                            <span>
+                                Sala 312
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="day-card">
+
+                    <div class="day-header">
+
+                        <strong>
+                            Terça-feira
+                        </strong>
+
+                        <span>
+                            13 OUT
+                        </span>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            19:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Matemática Financeira
+                            </strong>
+
+                            <span>
+                                Sala 108
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            21:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Direito Empresarial
+                            </strong>
+
+                            <span>
+                                Sala 312
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="day-card">
+
+                    <div class="day-header">
+
+                        <strong>
+                            Quarta-feira
+                        </strong>
+
+                        <span>
+                            14 OUT
+                        </span>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            19:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Análise das Demonstrações Contábeis
+                            </strong>
+
+                            <span>
+                                Sala 215
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            21:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Direito Empresarial
+                            </strong>
+
+                            <span>
+                                Sala 312
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="day-card">
+
+                    <div class="day-header">
+
+                        <strong>
+                            Quinta-feira
+                        </strong>
+
+                        <span>
+                            15 OUT
+                        </span>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            19:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Contabilidade de Custos
+                            </strong>
+
+                            <span>
+                                Sala 107
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            21:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Direito Empresarial
+                            </strong>
+
+                            <span>
+                                Sala 312
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="day-card">
+
+                    <div class="day-header">
+
+                        <strong>
+                            Sexta-feira
+                        </strong>
+
+                        <span>
+                            16 OUT
+                        </span>
+
+                    </div>
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+                            19:00
+                        </div>
+
+                        <div class="class-info">
+
+                            <strong>
+                                Auditoria Contábil
+                            </strong>
+
+                            <span>
+                                Sala 209
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </section>
+
+
+        <!-- =====================================
+             CARTEIRINHA
+        ====================================== -->
+        <section id="student-card-screen" class="screen">
+
+            <header class="inner-header">
+
+                <button class="back-button"
+                        data-screen="home">
+                    ‹
+                </button>
+
+                <h2>
+                    Carteirinha Estudantil
+                </h2>
+
+                <div class="header-spacer"></div>
+
+            </header>
+
+
+            <main class="card-page">
+
+                <!-- =====================================
+                     CARTEIRINHA
+                ====================================== -->
+
+                <div class="student-card-real">
+
+                    <!-- CABEÇALHO VERDE -->
+                    <div class="student-card-top">
+
+                        <div class="usf-brand">
+                            <strong>USF</strong>
+                        </div>
+
+                        <div class="google-education">
+                            <span>Google</span>
+                            <small>for Education</small>
+                        </div>
+
+                        <div class="usf-title">
+
+                            <strong>
+                                UNIVERSIDADE SÃO FRANCISCO
+                            </strong>
+
+                            <span>
+                                CARTEIRA DE IDENTIFICAÇÃO ESTUDANTIL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CORPO -->
+                    <div class="student-card-body">
+
+                        <!-- FOTO -->
+                        <div class="student-photo-real">
+
+                            <img src="10001952.jpg"
+                                 alt="Foto do aluno">
+
+                        </div>
+
+
+                        <!-- DADOS -->
+                        <div class="student-data">
+
+                            <div class="student-field">
+
+                                <span>
+                                    NOME:
+                                </span>
+
+                                <strong>
+                                    FRANCIELE DOS SANTOS NATAL
+                                </strong>
+
+                            </div>
+
+                            <div class="student-field">
+
+                                <span>
+                                    CPF:
+                                </span>
+
+                                <strong>
+                                    38580198879
+                                </strong>
+
+                                <span>
+                                    MATRÍCULA:
+                                </span>
+
+                                <strong>
+                                    202601952
+                                </strong>
+
+                            </div>
+                            <br />
+                            <br />
+
+                            <div class="student-field" style="width: 100% !important">
+
+                                <span>
+                                    CURSO:
+                                </span>
+
+                                <strong>
+                                    CIÊNCIAS CONTÁBEIS
+                                </strong>
+
+                            </div>
+
+
+                            <div class="student-field">
+
+                                <span>
+                                    NÍVEL DO CURSO:
+                                </span>
+
+                                <strong>
+                                    GRADUAÇÃO - NOTURNO
+                                </strong>
+
+                            </div>
+
+
+                            <div class="student-field">
+
+                                <span>
+                                    UNIDADE:
+                                </span>
+
+                                <strong>
+                                    CAMPINAS - SWIFT
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CÓDIGO DE BARRAS -->
+                        <div class="barcode-container">
+
+                            <div class="barcode">
+
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                                <i></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- VALIDADE -->
+                        <div class="student-validity">
+
+                            VÁLIDO ATÉ
+                            <strong>31/12/2026</strong>
+
+                        </div>
+
+
+                        <!-- ELEMENTO DECORATIVO -->
+                        <div class="card-watermark">
+
+                            <div class="watermark-circle"></div>
+
+                            <div class="watermark-wave"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </section>
+
+
+        <!-- =====================================
+             DOCUMENTOS
+        ====================================== -->
+        <section id="documents-screen" class="screen">
+
+            <header class="inner-header">
+
+                <button class="back-button"
+                        data-screen="home">
+                    ‹
+                </button>
+
+                <h2>
+                    Documentos
+                </h2>
+
+                <div class="header-spacer"></div>
+
+            </header>
+
+            <main class="page-content">
+
+                <button class="document-item">
+
+                    <div class="document-icon">
+                        📄
+                    </div>
+
+                    <div class="document-info">
+
+                        <strong>
+                            Histórico Escolar
+                        </strong>
+
+                        <span>
+                            Documento acadêmico
+                        </span>
+
+                    </div>
+
+                    <span class="document-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button class="document-item">
+
+                    <div class="document-icon">
+                        📜
+                    </div>
+
+                    <div class="document-info">
+
+                        <strong>
+                            Declaração de Matrícula
+                        </strong>
+
+                        <span>
+                            Documento acadêmico
+                        </span>
+
+                    </div>
+
+                    <span class="document-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button class="document-item">
+
+                    <div class="document-icon">
+                        💳
+                    </div>
+
+                    <div class="document-info">
+
+                        <strong>
+                            Comprovante Financeiro
+                        </strong>
+
+                        <span>
+                            Documento financeiro
+                        </span>
+
+                    </div>
+
+                    <span class="document-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+            </main>
+
+        </section>
+
+
+        <!-- =====================================
+             PERFIL
+        ====================================== -->
+        <section id="profile-screen" class="screen">
+
+            <header class="inner-header">
+
+                <button class="back-button"
+                        data-screen="home">
+                    ‹
+                </button>
+
+                <h2>
+                    Meu Perfil
+                </h2>
+
+                <div class="header-spacer"></div>
+
+            </header>
+
+            <main class="profile-page">
+
+                <div class="profile-avatar">
+                    FN
+                </div>
+
+                <h2>
+                    Franciele Dos Santos Natal
+                </h2>
+
+                <p>
+                    Ciências Contábeis
+                </p>
+
+
+                <div class="profile-list">
+
+                    <div class="profile-row">
+
+                        <span>
+                            Matrícula
+                        </span>
+
+                        <strong>
+                            202601952
+                        </strong>
+
+                    </div>
+
+                    <div class="profile-row">
+
+                        <span>
+                            Semestre
+                        </span>
+
+                        <strong>
+                            2º semestre
+                        </strong>
+
+                    </div>
+
+                    <div class="profile-row">
+
+                        <span>
+                            Campus
+                        </span>
+
+                        <strong>
+                            Campinas
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button id="logout-button"
+                        class="logout-button">
+                    Sair do aplicativo
+                </button>
+
+            </main>
+
+        </section>
+
+
+        <!-- =====================================
+             BOTTOM NAVIGATION
+        ====================================== -->
+        <nav id="bottom-navigation"
+             class="bottom-navigation">
+
+            <button class="nav-item active"
+                    data-screen="home">
+
+                <span>
+                    🏠
+                </span>
+
+                <small>
+                    Início
+                </small>
+
+            </button>
+
+
+            <button class="nav-item"
+                    data-screen="grades">
+
+                <span>
+                    📝
+                </span>
+
+                <small>
+                    Notas
+                </small>
+
+            </button>
+
+
+            <button class="nav-item"
+                    data-screen="schedule">
+
+                <span>
+                    📅
+                </span>
+
+                <small>
+                    Horários
+                </small>
+
+            </button>
+
+
+            <button class="nav-item"
+                    data-screen="student-card">
+
+                <span>
+                    🎓
+                </span>
+
+                <small>
+                    Carteira
+                </small>
+
+            </button>
+
+
+            <button class="nav-item"
+                    data-screen="profile">
+
+                <span>
+                    👤
+                </span>
+
+                <small>
+                    Perfil
+                </small>
+
+            </button>
+
+        </nav>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script src="https://jsdelivr.net"></script>
+
+</body>
+</html>
